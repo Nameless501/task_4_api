@@ -34,9 +34,7 @@ router.post(
     authentication.signIn
 );
 
-router.use(authorization.authorizeUser);
-
-router.use('/users', require('./users'));
+router.use('/users', authorization.authorizeUser, require('./users'));
 
 router.use((req, res, next) => next(new NotFoundError()));
 
