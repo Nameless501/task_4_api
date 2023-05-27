@@ -26,7 +26,7 @@ class Authorization {
 
     _verifyToken = () => {
         try {
-            this._payload = jwt.verify(this._jwt + 'asda', JWT_KEY);
+            this._payload = jwt.verify(this._jwt, JWT_KEY);
         } catch (err) {
             throw new DataAccessError(NEED_AUTH_MESSAGE);
         }
