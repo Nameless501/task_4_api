@@ -1,0 +1,40 @@
+{
+    "name": "task_4_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "lint": "npx eslint .",
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.27.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-import": "^2.26.0",
+        "nodemon": "^2.0.20",
+        "prettier": "2.8.8"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "celebrate": "^15.0.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "dotenv-vault-core": "^0.7.0",
+        "express": "^4.18.2",
+        "express-rate-limit": "^6.7.0",
+        "express-winston": "^4.2.0",
+        "helmet": "^6.0.1",
+        "joi": "^17.9.2",
+        "jsonwebtoken": "^9.0.0",
+        "mysql2": "^3.3.2",
+        "sequelize": "^6.31.1",
+        "validator": "^13.7.0",
+        "winston": "^3.9.0"
+    }
+}
