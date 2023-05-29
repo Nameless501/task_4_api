@@ -20,7 +20,7 @@ const loggerConfig = {
 };
 
 const corsConfig = {
-    origin: ['http://localhost:3001', 'http://localhost:3000'],
+    origin: ['http://localhost:3001', 'http://localhost:3000', 'https://nameless501.github.io/task_4_frontend/'],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     preflightContinue: false,
     optionsSuccessStatus: 204,

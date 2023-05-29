@@ -54,9 +54,9 @@ class Authentication {
             expiresIn: '7d',
         });
         res.cookie('jwt', token, {
-            // httpOnly: true,
-            // sameSite: 'none',
-            // secure: NODE_ENV === 'production',
+            httpOnly: true,
+            sameSite: 'none',
+            secure: true,
         });
         return user;
     };
