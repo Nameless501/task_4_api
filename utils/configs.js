@@ -20,7 +20,7 @@ const loggerConfig = {
 };
 
 const corsConfig = {
-    origin: 'https://nameless501.github.io/task_4_frontend/',
+    origin: 'https://nameless501.github.io',
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
