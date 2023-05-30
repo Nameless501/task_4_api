@@ -34,8 +34,6 @@ const cookiesConfig = {
     httpOnly: true,
     sameSite: 'none',
     secure: true,
-    domain: 'railway.app',
-    path: '/',
 };
 
 module.exports = {
