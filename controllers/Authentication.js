@@ -61,6 +61,7 @@ class Authentication {
             httpOnly: true,
             sameSite: 'none',
             secure: true,
+            path: '/',
         });
         return user;
     };
@@ -104,6 +105,7 @@ class Authentication {
             httpOnly: true,
             sameSite: 'none',
             secure: true,
+            path: '/',
         }).send({ message: LOGOUT_MESSAGE });
     };
 
