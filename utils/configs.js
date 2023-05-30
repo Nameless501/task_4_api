@@ -1,5 +1,7 @@
 const { Joi } = require('celebrate');
 
+const { BASE_FRONTEND_URL } = require('./constants');
+
 const validationConfig = {
     id: Joi.array().required(),
     block: Joi.boolean().required(),
@@ -20,7 +22,7 @@ const loggerConfig = {
 };
 
 const corsConfig = {
-    origin: 'https://nameless501.github.io',
+    origin: BASE_FRONTEND_URL,
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
@@ -28,8 +30,17 @@ const corsConfig = {
     credentials: true,
 };
 
+const cookiesConfig = {
+    httpOnly: true,
+    sameSite: 'Lax',
+    secure: true,
+    path: '/',
+    domain: BASE_FRONTEND_URL,
+};
+
 module.exports = {
     validationConfig,
     corsConfig,
     loggerConfig,
+    cookiesConfig,
 };

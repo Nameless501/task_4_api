@@ -14,6 +14,8 @@ const {
     LOGOUT_MESSAGE,
 } = require('../utils/constants');
 
+const { cookiesConfig } = require('../utils/configs');
+
 const { UniqueConstraintError } = require('sequelize');
 
 class Authentication {
@@ -57,13 +59,7 @@ class Authentication {
         const token = jwt.sign({ id: user.id }, this._jwtKey, {
             expiresIn: '7d',
         });
-        res.cookie('jwt', token, {
-            httpOnly: true,
-            sameSite: 'lax',
-            secure: true,
-            path: '/',
-            domain: 'https://nameless501.github.io',
-        });
+        res.cookie('jwt', token, cookiesConfig);
         return user;
     };
 
@@ -102,13 +98,7 @@ class Authentication {
     };
 
     signOut = (req, res, next) => {
-        res.clearCookie('jwt', {
-            httpOnly: true,
-            sameSite: 'Lax',
-            secure: true,
-            path: '/',
-            domain: 'https://nameless501.github.io',
-        }).send({ message: LOGOUT_MESSAGE });
+        res.clearCookie('jwt', cookiesConfig).send({ message: LOGOUT_MESSAGE });
     };
 
     authorizeUser = (req, res, next) => {

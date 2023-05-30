@@ -32,6 +32,8 @@ const DEFAULT_ERROR_MESSAGE = 'Произошла ошибка';
 
 const LOGOUT_MESSAGE = 'Выход из аккаунта успешно выполнен';
 
+const BASE_FRONTEND_URL = 'https://nameless501.github.io';
+
 module.exports = {
     BAD_REQUEST_CODE,
     NOT_FOUND_CODE,
@@ -50,4 +52,5 @@ module.exports = {
     FORBIDDEN_MESSAGE,
     DEFAULT_ERROR_MESSAGE,
     LOGOUT_MESSAGE,
+    BASE_FRONTEND_URL,
 };
