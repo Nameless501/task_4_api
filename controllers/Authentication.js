@@ -8,7 +8,11 @@ const ConflictError = require('../errors/ConflictError');
 
 const ForbiddenError = require('../errors/ForbiddenError');
 
-const { USER_IS_BLOCKED_MESSAGE, CREATED_CODE } = require('../utils/constants');
+const {
+    USER_IS_BLOCKED_MESSAGE,
+    CREATED_CODE,
+    LOGOUT_MESSAGE,
+} = require('../utils/constants');
 
 const { UniqueConstraintError } = require('sequelize');
 
@@ -90,6 +94,22 @@ class Authentication {
             .then((user) => this._compareUserPassword(user, req.body.password))
             .then(this._updateLastLoginTime)
             .then((user) => this._setJwtCookie(user, res))
+            .then(this._deletePassword)
+            .then((user) => res.send(user))
+            .catch(next);
+    };
+
+    signOut = (req, res, next) => {
+        res.clearCookie('jwt', {
+            httpOnly: true,
+            sameSite: 'none',
+            secure: true,
+        }).send({ message: LOGOUT_MESSAGE });
+    };
+
+    authorizeUser = (req, res, next) => {
+        this._findUser({ id: req.user.id })
+            .then(this._updateLastLoginTime)
             .then(this._deletePassword)
             .then((user) => res.send(user))
             .catch(next);

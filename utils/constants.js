@@ -30,6 +30,8 @@ const FORBIDDEN_MESSAGE = 'Ошибка доступа';
 
 const DEFAULT_ERROR_MESSAGE = 'Произошла ошибка';
 
+const LOGOUT_MESSAGE = 'Выход из аккаунта успешно выполнен';
+
 module.exports = {
     BAD_REQUEST_CODE,
     NOT_FOUND_CODE,
@@ -47,4 +49,5 @@ module.exports = {
     EMAIL_CONFLICT_MESSAGE,
     FORBIDDEN_MESSAGE,
     DEFAULT_ERROR_MESSAGE,
+    LOGOUT_MESSAGE,
 };
