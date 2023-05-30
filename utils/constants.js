@@ -32,7 +32,7 @@ const DEFAULT_ERROR_MESSAGE = 'Произошла ошибка';
 
 const LOGOUT_MESSAGE = 'Выход из аккаунта успешно выполнен';
 
-const BASE_FRONTEND_URL = 'https://nameless501.github.io';
+const BASE_FRONTEND_URL = 'https://task4frontend-production.up.railway.app';
 
 module.exports = {
     BAD_REQUEST_CODE,

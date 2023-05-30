@@ -32,10 +32,10 @@ const corsConfig = {
 
 const cookiesConfig = {
     httpOnly: true,
-    sameSite: 'Lax',
+    sameSite: 'none',
     secure: true,
+    domain: 'railway.app',
     path: '/',
-    domain: BASE_FRONTEND_URL,
 };
 
 module.exports = {
