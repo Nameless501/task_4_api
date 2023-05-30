@@ -16,13 +16,11 @@ const users = new Users(UserModel);
 
 router.get('/', users.getAll);
 
-router.options(cors());
-
-router.delete('/', [cors(), validation.createRequestValidator('id')], users.delete);
+router.delete('/', validation.createRequestValidator('id'), users.delete);
 
 router.patch(
     '/',
-    [cors(), validation.createRequestValidator('id', 'block')],
+    validation.createRequestValidator('id', 'block'),
     users.toggleBlock
 );
 
