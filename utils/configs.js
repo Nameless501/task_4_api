@@ -32,7 +32,7 @@ const corsConfig = {
 
 const cookiesConfig = {
     httpOnly: true,
-    sameSite: 'Lax',
+    sameSite: 'lax',
     secure: true,
     path: '/',
     domain: BASE_FRONTEND_URL,
