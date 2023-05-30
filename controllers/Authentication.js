@@ -59,9 +59,10 @@ class Authentication {
         });
         res.cookie('jwt', token, {
             httpOnly: true,
-            sameSite: 'none',
+            sameSite: 'lax',
             secure: true,
             path: '/',
+            domain: 'https://nameless501.github.io',
         });
         return user;
     };
@@ -103,9 +104,10 @@ class Authentication {
     signOut = (req, res, next) => {
         res.clearCookie('jwt', {
             httpOnly: true,
-            sameSite: 'none',
+            sameSite: 'Lax',
             secure: true,
             path: '/',
+            domain: 'https://nameless501.github.io',
         }).send({ message: LOGOUT_MESSAGE });
     };
 
