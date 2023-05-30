@@ -1,5 +1,7 @@
 const router = require('express').Router();
 
+var cors = require('cors')
+
 const Users = require('../controllers/Users');
 
 const UserModel = require('../models/user');
@@ -14,11 +16,13 @@ const users = new Users(UserModel);
 
 router.get('/', users.getAll);
 
-router.delete('/', validation.createRequestValidator('id'), users.delete);
+router.options(cors());
+
+router.delete('/', [cors(), validation.createRequestValidator('id')], users.delete);
 
 router.patch(
     '/',
-    validation.createRequestValidator('id', 'block'),
+    [cors(), validation.createRequestValidator('id', 'block')],
     users.toggleBlock
 );
 
