@@ -1,7 +1,5 @@
 const router = require('express').Router();
 
-var cors = require('cors')
-
 const Users = require('../controllers/Users');
 
 const UserModel = require('../models/user');

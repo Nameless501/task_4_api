@@ -34,6 +34,14 @@ router.post(
     authentication.signIn
 );
 
+router.get(
+    '/authorization',
+    authorization.authorizeUser,
+    authentication.authorizeUser
+);
+
+router.post('/signout', authorization.authorizeUser, authentication.signOut);
+
 router.use('/users', authorization.authorizeUser, require('./users'));
 
 router.use((req, res, next) => next(new NotFoundError()));
