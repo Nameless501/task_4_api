@@ -1,4 +1,4 @@
-# <p align="center">Задание №4</p>
+# <p align="center">Панель администратора (back-end)</p>
 
 ---
 
